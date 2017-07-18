@@ -1,0 +1,25 @@
+package pl.basestudio.springlessons.financeassistant;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
+
+import pl.basestudio.springlessons.financeassistant.services.CurrencyRateProvider;
+import pl.basestudio.springlessons.financeassistant.services.DatabaseCurrencyRateProvider;
+import pl.basestudio.springlessons.financeassistant.services.FileCurrencyRateProvider;
+import pl.basestudio.springlessons.financeassistant.services.FixedPrecisionProvider;
+import pl.basestudio.springlessons.financeassistant.services.JpyPrecisionProvider;
+import pl.basestudio.springlessons.financeassistant.services.RateConversionService;
+import pl.basestudio.springlessons.financeassistant.services.RoundPrecisionProvider;
+
+@Configuration
+@Profile({"prod"})
+public class AppConfigProd {
+	
+	@Bean
+	public CurrencyRateProvider databaseCurrencyRateProvider() {
+		return new DatabaseCurrencyRateProvider();
+	}
+	
+}

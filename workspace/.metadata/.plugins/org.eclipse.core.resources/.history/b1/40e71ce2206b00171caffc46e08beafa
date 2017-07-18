@@ -1,0 +1,5 @@
+package pl.basestudio.springlessons.financeassistant.dao;
+
+public interface CurrencyRateDao {
+
+}

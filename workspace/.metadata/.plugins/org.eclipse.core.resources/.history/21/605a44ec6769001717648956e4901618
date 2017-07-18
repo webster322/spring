@@ -1,0 +1,18 @@
+package pl.basestudio.springlessons.financeassistant.services;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class FixedPrecisionProvider implements RoundPrecisionProvider {
+
+	public int getRoundPrecision(String currency) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean isSupported(String currency) {
+		// TODO Auto-generated method stub
+		return "PLN".equals(currency);
+	}
+
+}

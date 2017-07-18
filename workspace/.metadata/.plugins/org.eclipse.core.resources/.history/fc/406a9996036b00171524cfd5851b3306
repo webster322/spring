@@ -1,0 +1,1 @@
+create table if not exists currency_rates (CURRENCY VARCHAR2(3) NOT NULL, RATE_DATE DATE, RATE NUMBER(8,4));

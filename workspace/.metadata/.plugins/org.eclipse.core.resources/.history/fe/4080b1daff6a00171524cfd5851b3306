@@ -1,0 +1,43 @@
+package pl.basestudio.springlessons.financeassistant;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.context.support.ResourceBundleMessageSource;
+
+import pl.basestudio.springlessons.financeassistant.services.FixedPrecisionProvider;
+import pl.basestudio.springlessons.financeassistant.services.JpyPrecisionProvider;
+import pl.basestudio.springlessons.financeassistant.services.RateConversionService;
+import pl.basestudio.springlessons.financeassistant.services.RoundPrecisionProvider;
+
+@Configuration
+public class AppConfigCommon {
+	
+	@Bean
+	public ResourceBundleMessageSource messageSource(){
+		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+		source.setBasename("i18n/messages");
+		return source;
+	}
+	
+//	@Bean
+//	public RateConversionService rateConversionService() {
+//		RateConversionService rateConversionService = new RateConversionService();
+//		return rateConversionService;
+//	}
+	
+	@Bean
+	public RoundPrecisionProvider roundPrecisionProvider(){
+		return new FixedPrecisionProvider();
+	}
+	
+	@Bean(name="anotherPrecisionProvider")
+	public RoundPrecisionProvider roundJpyPrecisionProvider(){
+		return new JpyPrecisionProvider();
+	}
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer(){
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+}

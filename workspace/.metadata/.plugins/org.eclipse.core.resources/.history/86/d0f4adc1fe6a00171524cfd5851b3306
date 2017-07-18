@@ -1,0 +1,8 @@
+package pl.basestudio.springlessons.financeassistant;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfigCommon {
+
+}

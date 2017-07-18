@@ -1,0 +1,13 @@
+package pl.basestudio.springlessons.financeassistant.services;
+
+import org.springframework.stereotype.Service;
+
+import pl.basestudio.springlessons.financeassistant.dto.CurrencyRate;
+
+@Service
+public class RateUpdateService {
+
+	public void storeRate(CurrencyRate currencyRate){
+		
+	}
+}

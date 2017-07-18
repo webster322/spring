@@ -1,0 +1,5 @@
+package pl.basestudio.springlessons.financeassistant.services;
+
+public class RateUpdateService {
+
+}

@@ -1,0 +1,21 @@
+package pl.basestudio.springlessons.financeassistant.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pl.basestudio.springlessons.financeassistant.dao.CurrencyRateDao;
+import pl.basestudio.springlessons.financeassistant.dto.CurrencyRate;
+
+@Service
+public class RateUpdateService {
+	
+	@Autowired
+	CurrencyRateDao currencyRateDao;
+	public void storeRate(CurrencyRate currencyRate){
+		currencyRateDao.addRate(currencyRate);
+	}
+	
+	public void storeManyRate(List<CurrencyRate> currencyRates){
+		currencyRateDao.addRate(currencyRate);
+	}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="fileCurrencyRateProvider" class="pl.basestudio.springlessons.financeassistant.services.FileCurrencyRateProvider">
+		<property name="fileName" value="plik,xml"></property>
+	</bean>
+	
+	<bean id="rateConversionService" class="pl.basestudio.springlessons.financeassistant.services.RateConversionService">
+		<property name="rateProvider" ref="rateConversionService"></property>
+		<property name="supportedCurr">
+			<set>
+				<value>EUR</value>
+				<value>USD</value>
+			</set>
+		</property>
+	</bean>
+</beans>
